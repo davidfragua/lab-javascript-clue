@@ -123,4 +123,3 @@ function revealMystery(pickMystery) {
 }
 
 console.log(`${suspect["firstName"]} ${suspect["lastName"]} killed Mr. Boddy using the ${weapon["name"]} in the ${room["name"]}!`)
-// sale como undefined pero no encuentro el error
