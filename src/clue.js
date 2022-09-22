@@ -105,14 +105,12 @@ function selectRandom(Arr1) {
         return (Arr1[positionSuspect])
 }
 
-function pickMystery() {
-    // let suspect = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
-    // let room = roomsArray[Math.floor(Math.random() * roomsArray.length)];
-    // let weapon = weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
-    let suspect = selectRandom(suspectsArray);
-    let room = selectRandom(roomsArray);
-    let weapon = selectRandom(weaponsArray);
 
+let suspect = selectRandom(suspectsArray);
+let room = selectRandom(roomsArray);
+let weapon = selectRandom(weaponsArray);
+
+function pickMystery() {
     return  { suspect, room, weapon };
     
 }
@@ -121,8 +119,8 @@ function pickMystery() {
 
 function revealMystery(pickMystery) {
 
-    return `${suspectsArray.firstName} ${suspectsArray.lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`
+    return `${suspect["firstName"]} ${suspect["lastName"]} killed Mr. Boddy using the ${weapon["name"]} in the ${room["name"]}!`
 }
 
-console.log(`${suspectsArray[firstName]} ${suspectsArray.lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`)
+console.log(`${suspect["firstName"]} ${suspect["lastName"]} killed Mr. Boddy using the ${weapon["name"]} in the ${room["name"]}!`)
 // sale como undefined pero no encuentro el error
