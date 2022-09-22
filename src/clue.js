@@ -96,24 +96,26 @@ const weaponsArray = [
 
 // ITERATION 2
 
-function selectRandom(suspectsArray) {
-    if(suspectsArray.length === 0){
+function selectRandom(Arr1) {
+    if(Arr1.length === 0){
         return undefined;
     } 
-        let randomAssasin = Math.random() * suspectsArray.length;
+        let randomAssasin = Math.random() * Arr1.length;
         let positionSuspect = Math.floor(randomAssasin);
-        return (suspectsArray[positionSuspect])
+        return (Arr1[positionSuspect])
 }
 
 function pickMystery() {
-    let suspect = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
-    let room = roomsArray[Math.floor(Math.random() * roomsArray.length)];
-    let weapon = weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
-    
-    return selectRandom = { suspect, room, weapon }
+    // let suspect = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
+    // let room = roomsArray[Math.floor(Math.random() * roomsArray.length)];
+    // let weapon = weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
+    let suspect = selectRandom(suspectsArray);
+    let room = selectRandom(roomsArray);
+    let weapon = selectRandom(weaponsArray);
+
+    return  { suspect, room, weapon };
     
 }
-
 
 // ITERATION 3
 
@@ -122,4 +124,5 @@ function revealMystery(pickMystery) {
     return `${suspectsArray.firstName} ${suspectsArray.lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`
 }
 
-console.log(`${suspectsArray.firstName} ${suspectsArray.lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`)
+console.log(`${suspectsArray[firstName]} ${suspectsArray.lastName} killed Mr. Boddy using the ${weaponsArray.name} in the ${roomsArray.name}!`)
+// sale como undefined pero no encuentro el error
